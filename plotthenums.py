@@ -2,7 +2,6 @@ import pandas as pd
 import numpy as np
 
 import seaborn as sns
-# import matplotlib as mpl
 import matplotlib.pyplot as plt
 
 sns.set_theme()
@@ -13,29 +12,7 @@ diamonds = sns.load_dataset("diamonds")
 shname = 'COVID_Todesfälle_KW_AG10'
 flname = 'COVID-19_Todesfaelle.xlsx'
 cvdths = pd.read_excel(flname, sheet_name=shname, engine='openpyxl')
-
-# f, ax = plt.subplots(figsize=(7, 5))
-# sns.despine(f)
-# sns.histplot(
-#     # cvdths,
-#     diamonds,
-#     x="Sterbewoche", hue="cut",
-#     multiple="stack",
-#     palette="light:m_r",
-#     edgecolor=".3",
-#     linewidth=.5,
-#     log_scale=True,
-# )
-# ax.xaxis.set_major_formatter(mpl.ticker.ScalarFormatter())
-# ax.set_xticks([500, 1000, 2000, 5000, 10000])
-
-penguins = sns.load_dataset("penguins")
-
-# sns.histplot(data=penguins, x="flipper_length_mm",
-#              hue="species", multiple="stack")
-
-print(cvdths)
-# print(penguins)
+# print(cvdths)
 
 
 def cleardatalists(pdlist):
@@ -84,7 +61,5 @@ plt.stackplot(abscss, nrmlzddta, labels=categrs)
 handles, labels = ax.get_legend_handles_labels()
 ax.legend(handles[::-1], labels[::-1], title='Altersgruppen', loc='upper left')
 plt.savefig('toteperkw-relativ.png')
-
-# print(diamonds)
 
 plt.show()
